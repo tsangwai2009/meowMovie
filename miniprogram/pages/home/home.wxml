@@ -1,0 +1,17 @@
+<image src='/images/bg.png' class='bg'></image>
+<view class='home'>
+  <view class='suggest'>
+    <image class="image" mode="widthFix" src="{{movie.image}}"></image>
+    <view class='name'>{{movie.name}}</view>
+    <view class="info">
+        <image class="head" src="{{movie.image}}"></image>
+        <view class="detail">hihi 為你推薦了一部電影</view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='options'>
+      <view class='button'>熱門</view>
+      <view class='button'>我的</view>
+    </view>
+  </view>
+</view>
