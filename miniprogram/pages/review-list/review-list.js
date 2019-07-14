@@ -1,17 +1,21 @@
-// pages/review-list/review-list.js
+// pages/movie-list/movie-list.js
+const db = require('../../utils/db')
+const util = require('../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    reviewList: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (options)
+   {
+    this.getReviewList(options.id)
 
   },
 
@@ -62,5 +66,33 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getReviewList(id) {
+         this.setData({
+          reviewList: null
+        })
+    wx.showLoading({
+      title: 'Still Loading...',
+    })
+    db.getReviewList(id).then(result => {
+      wx.hideLoading()
+
+      const data = result.data
+      console.log(data)
+      if (data.length) {
+        // update the total price for cart
+        this.setData({
+          reviewList: data
+        })
+      }
+    }).catch(err => {
+      console.error(err)
+      wx.hideLoading()
+
+      wx.showToast({
+        icon: 'none',
+        title: 'Failed'
+      })
+    })
+  },
 })

@@ -3,15 +3,18 @@
   <view class='suggest'>
     <image class="image" mode="widthFix" src="{{movie.image}}"></image>
     <view class='name'>{{movie.name}}</view>
-    <view class="info">
-        <image class="head" src="{{movie.image}}"></image>
-        <view class="detail">hihi 為你推薦了一部電影</view>
+    <view class="info" wx:if="{{review}}">
+        <image class="head" src="{{review.avater}}"></image>
+        <view class="detail">{{review.username}} 為你推薦了一部電影</view>
+    </view>
+      <view class="info" wx:elif="{{!review}}">
+        <view class="detail" bindtap='choose'>快來寫第一份評論吧！</view>
     </view>
   </view>
   <view class='footer'>
     <view class='options'>
-      <view class='button'>熱門</view>
-      <view class='button'>我的</view>
+      <navigator class='button' url='/pages/movie-list/movie-list'>熱門</navigator>
+      <navigator class='button' url='/pages/me/me'>我的</navigator>
     </view>
   </view>
 </view>

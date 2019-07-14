@@ -1,18 +1,25 @@
 // pages/movie-detail/movie-detail.js
+const db = require('../../utils/db')
+const util = require('../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    movieDetail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    db.getMovieDetail(options.id).then(res => {
+      console.log(res.data[0])
+      this.setData({
+        movieDetail:res.data[0]
+      })
+    })
   },
 
   /**

@@ -1,2 +1,10 @@
-<!--pages/review-list/review-list.wxml-->
-<text>pages/review-list/review-list.wxml</text>
+<view class='review-list' wx:if="{{reviewList.length}}">
+  <navigator class="review-block" wx:for="{{reviewList}}" wx:for-item="block" wx:key="id" url='/pages/review-detail/review-detail?id={{block._id}}'>
+      <image class="review-image" src="{{block.avater}}"></image>
+      <view class="review-info">
+        <view class="review-name">{{block.username}}</view>
+        <view class="review-content">{{block.content}}</view>
+      </view>
+  </navigator>
+</view>
+<view wx:elif="{{reviewList.length==0}}">No review</view>

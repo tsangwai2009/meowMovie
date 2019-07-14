@@ -1,2 +1,8 @@
-<!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view class="login-card">
+
+    <view class="login-info">
+      <view class="login-text">未登錄</view>
+      <view class="login-tips">按 "登入" 以 WeChat 帳戶登錄</view>
+    </view>
+  </view>
+  <button class="login-btn" open-type='getUserInfo' bindgetuserinfo="onTapLogin">登入</button>

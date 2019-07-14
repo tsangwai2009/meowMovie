@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    movie:null,
+    review:null
   },
 
   /**
@@ -79,10 +80,56 @@ Page({
           movie: data[Math.floor(Math.random() * (data.length) + 0)]
         })
         console.log(this.data.movie)
+        this.getReview(this.data.movie._id)
       }
     }).catch(err => {
       console.error(err)
       wx.hideLoading()
     })
+  },
+  getReview(id)
+  {
+    this.setData({
+      review: null
+    })
+    wx.showLoading({
+      title: 'Still Loading...',
+    })
+
+    db.getReviewList(id).then(result => {
+      wx.hideLoading()
+      const data = result.data
+
+      if (data.length) {
+        this.setData({
+          review: data[Math.floor(Math.random() * (data.length) + 0)]
+        })
+        console.log(this.data.review)
+      }
+    }).catch(err => {
+      wx.hideLoading()
+    })
+  },
+  choose(){
+    util.isAuthenticated().then(userInfo => {
+        wx.showActionSheet({
+          itemList: ['文字', '語音'],
+          success(res) {
+            console.log(res.tapIndex)
+            wx.navigateTo({
+              url: '../../pages/me/me?selected='+res.tapIndex
+            })
+          },
+          fail(res) {
+            console.log(res.errMsg)
+          }
+        })
+      }).catch(err => {
+        wx.showToast({
+          icon: 'none',
+          title: '請先登陸！'
+        })
+
+      })
   }
 })

@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    movie: {
+      image: "cloud://movie-2hovl.6d6f-movie-2hovl/movies/movie3.jpg",
+      name: '黑超特警組：反轉世界',
+    },
 
   },
 

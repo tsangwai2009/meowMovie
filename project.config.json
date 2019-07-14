@@ -10,7 +10,7 @@
 	},
 	"appid": "wx6a5d06b450ff0ed5",
 	"projectname": "MeowMovie",
-	"libVersion": "2.2.5",
+	"libVersion": "2.7.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -30,12 +30,27 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "me",
+					"pathName": "pages/me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "reviewList",
+					"pathName": "pages/review-list/review-list",
+					"query": "id=5d14f6cfea88890a0168bcd7",
+					"scene": null
 				}
 			]
 		}

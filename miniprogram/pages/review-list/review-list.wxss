@@ -1,1 +1,46 @@
-/* pages/review-list/review-list.wxss */
+.review-list{
+  margin:20rpx 0; 
+}
+.review-block {
+padding: 20rpx 0;
+margin:10rpx 0; 
+display: flex;
+justify-content: center; 
+align-items: center;
+background: #FFFFFF;
+}
+
+.review-image {
+  flex-shrink: 0;
+  margin-left: 53rpx;
+  height: 150rpx;
+  width: 150rpx;
+  background: #F5E069;
+  border-radius: 50%;
+}
+
+.review-info {
+  flex-grow: 1;
+  padding: 0 50rpx;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+
+.review-name {
+  color: rgba(29, 29, 38, 0.9);
+  font-size: 36rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+}  
+
+.review-content {
+  width: 350rpx;
+  color: rgba(29, 29, 38, 0.7);
+  margin-top: 36rpx;
+  font-weight: bold;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
